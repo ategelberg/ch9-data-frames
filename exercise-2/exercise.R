@@ -3,11 +3,11 @@
 # Create a vector of 100 employees ("Employee 1", "Employee 2", ... "Employee 100")
 # Hint: use the `paste()` function and vector recycling to add a number to the word
 # "Employee"
-employees <- c(paste("Employee", 1:100))
+employees <- paste("Employee", 1:100)
 
 # Create a vector of 100 random salaries for the year 2017
 # Use the `runif()` function to pick random numbers between 40000 and 50000
-salaries_2017 <- c(runif(100, 4000, 5000))
+salaries_2017 <- runif(100, 40000, 50000)
 
 # Create a vector of 100 salaries in 2018 that have changed from 2017
 # Use `runif()` to add a random number between -5000 and 10000 to each of 2017's
@@ -20,7 +20,7 @@ salaries <- data.frame(employees, salaries_2017, salaries_2018, stringsAsFactors
 
 # Create a column 'change' that stores each person's change in salary between
 # 2017 and 2018
-
+salaries$change <- salaries_2018 - salaries_2017
 
 # Create a column 'got_raise' that is TRUE if the person got a raise (their
 # salary went up)
